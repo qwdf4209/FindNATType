@@ -1,0 +1,5 @@
+configurations.maybeCreate("default")
+artifacts.add("default", file('jstun-0.7.3.jar'))
+dependencies {
+    implementation files('jstun-0.7.3.jar')
+}

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="light_blue">#11779F</color>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="blue">#000000FF</color>
+    <color name="callRecord_list_background">#4DD8D5CF</color>
+    <color name="gray">#D9D9D9</color>
+    <color name="light_gray">#898989</color>
+    <color name="red_forbidden">#E41003</color>
+    <color name="phonebook_active">#06fcde</color>
+	<color name="blocklist_active">#f9262f</color>
+	<color name="monitor_current">#50d2dc</color>
+	<color name="monitor_status_on">#01b4db</color>
+	<color name="monitor_status_off">#e92025</color>
+	<color name="photonumber">#62d7c8</color>
+	<color name="deviceon">#00fedf</color>
+	<color name="deviceoff">#f2132f</color>
+	<color name="systemstarttext">#fba809</color>
+	<color name="alarmtimetext">#92a0f6</color>
+	<color name="callhistoryactive">#fe9477</color>
+	<color name="setting_gray">#acaeb0</color>
+	<color name="setting_off">#e92026</color>
+	<color name="setting_normal">#01fcfd</color>
+	<color name="bell_on">#01d1d9</color>
+	<color name="bell_off">#acaeb0</color>
+	<color name="waterheater_on">#01d1d9</color>
+	<color name="waterheater_off">#fbfdfd</color>
+	<color name="yale_lock_color">#2be577</color>
+	<color name="yale_unlock_color">#01d1d9</color>
+	
+</resources>

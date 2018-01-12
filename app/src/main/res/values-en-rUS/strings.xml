@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FindNATType</string>
+    <string name="app_layout_title">Find The NAT Type</string>
+    <string name="btn_start">start test</string>
+    <string name="btn_testing">testing ...</string>
+    <string name="network_not_connected">Not Connect to Internet</string>
+</resources>
