@@ -7,6 +7,7 @@ import android.util.Log;
 import java.net.BindException;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
+import java.net.UnknownHostException;
 import java.util.Enumeration;
 
 import de.javawi.jstun.test.DiscoveryInfo;
@@ -21,10 +22,11 @@ public class NatTypeHandleUtil {
     private String sourceIp, stunIp;
     private int sourcePort, stunPort;
     private static NatTypeHandleUtil NATTypeFunc;
-    private int currentNATType;
+    private String currentNATType;
     private SharedPreferences settings;
     private SharedPreferences.Editor editor;
     private Context context;
+    public String errorMsg ;
 
     //get sharePreferences from Xmpp service
     public void setSharePreferences(SharedPreferences settings){
@@ -41,8 +43,9 @@ public class NatTypeHandleUtil {
     public NatTypeHandleUtil(){
         sourceIp = "192.168.0.103"; //this address will be changed by executeStunNAT function to get the current IP address
         sourcePort = 0; // set 0 is mean to generate the port number randomly when socket created
-        stunIp = "stun.stunprotocol.org";
+        stunIp = "stun.voxgratia.org";
         stunPort = 3478;
+        errorMsg = "";
     }
 
     //get local ip address
@@ -64,6 +67,7 @@ public class NatTypeHandleUtil {
             }
 
         }catch (Exception e) {
+            errorMsg = e.getMessage();
             e.printStackTrace();
         }
     }
@@ -91,25 +95,61 @@ public class NatTypeHandleUtil {
                     NatTypeResult =3; //type 3
                 else if (di.isSymmetric())
                     NatTypeResult =4; //type 4
-                currentNATType = NatTypeResult;
+                else if (di.isBlockedUDP()){
+                    NatTypeResult =0; //type 0
+                }
+                else {
+                    NatTypeResult = 5;
+                }
+                currentNATType = getNATTypeMean(NatTypeResult);
 
                 //write the current nat type to sharepreference
                 editor = settings.edit();
                 editor.putBoolean("testFinish",true);
-                editor.putInt("NatType",currentNATType);
-                editor.putString("LocalIP",di.getLocalIP().getHostAddress());
-                editor.putString("PublicIP",di.getPublicIP().getHostAddress());
+                editor.putString("NatType",currentNATType);
+                if (!currentNATType.equals("Unknow") && !currentNATType.equals("Firewall Blocks UDP")){
+                    editor.putString("LocalIP",di.getLocalIP().getHostAddress());
+                    editor.putString("PublicIP",di.getPublicIP().getHostAddress());
+                }
+                else{
+                    editor.putString("LocalIP",di.getLocalIP().getHostAddress());
+                    editor.putString("PublicIP","No Public IP");
+                }
                 editor.commit();
-                Log.e(TAG, String.valueOf(currentNATType));
-
-
+                Log.e(TAG, currentNATType);
 
             } catch (BindException be) {
-                System.out.println(iaddress.toString() + ": " + be.getMessage());
-            } catch (Exception e) {
-                System.out.println(e.getMessage());
+                errorMsg = be.getMessage();
+                be.printStackTrace();
+            }  catch (Exception e) {
+                errorMsg = e.getMessage();
                 e.printStackTrace();
             }
         }
+    }
+    private String getNATTypeMean(int NatType){
+        String result = "";
+        switch (NatType){
+            case 0:
+                result = "Firewall Blocks UDP";
+                break;
+            case 1:
+                result = "Full Cone";
+                break;
+            case 2:
+                result = "Restricted Cone";
+                break;
+            case 3:
+                result = "Port Restricted Cone";
+
+                break;
+            case 4:
+                result = "Symmetric";
+                break;
+            default:
+                result = "Unknow type";
+                break;
+        }
+        return result;
     }
 }

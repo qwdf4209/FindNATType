@@ -43,13 +43,27 @@
                     android:orientation="vertical" />
             </ScrollView>
 
-            <ProgressBar
-                android:id="@+id/progressBar"
-                style="?android:attr/progressBarStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:visibility="invisible" />
+            <RelativeLayout
+                android:id="@+id/infoScroll_mask"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#e0000000"
+                android:visibility="invisible">
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center">
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:indeterminateTint="@color/bell_on"
+                    android:visibility="invisible" />
+            </RelativeLayout>
 
 
         </FrameLayout>
@@ -73,7 +87,7 @@
                 android:id="@+id/StunIP"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="stun.stunprotocol.org:3478"
+                android:text="stun.voxgratia.org:3478"
                 android:textColor="@color/setting_gray"
                 android:textSize="20dp" />
 

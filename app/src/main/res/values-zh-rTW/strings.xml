@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">NAT類型測試</string>
-    <string name="app_layout_title">NAT類型測試</string>
-    <string name="btn_start">開始測試</string>
-    <string name="btn_testing">測試中 ...</string>
+    <string name="app_name">NAT類型分析</string>
+    <string name="app_layout_title">NAT類型分析</string>
+    <string name="btn_start">開始分析</string>
+    <string name="btn_testing">分析中 ...</string>
     <string name="network_not_connected">未連上網際網路</string>
 </resources>

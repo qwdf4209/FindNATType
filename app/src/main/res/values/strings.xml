@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">FindNATType</string>
-    <string name="app_layout_title">Find The NAT Type</string>
-    <string name="btn_start">start test</string>
-    <string name="btn_testing">testing ...</string>
+    <string name="app_name">NAT Type Analysis</string>
+    <string name="app_layout_title">NAT Type Analysis</string>
+    <string name="btn_start">start analysis</string>
+    <string name="btn_testing">Analyzing ...</string>
     <string name="network_not_connected">Not Connect to Internet</string>
 </resources>
