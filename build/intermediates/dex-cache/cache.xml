@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/Users/qwdf4209/Desktop/GitHub/FindNATType/app/libs/slf4j-api-1.5.6.jar"
+        jumboMode="false"
+        min-sdk-version="17"
+        optimize="true"
+        revision="26.0.2"
+        sha1="2b39196d7c1e927bbbb614752d21d76468f750ce">
+        <dex dex="/Users/qwdf4209/Desktop/GitHub/FindNATType/app/build/intermediates/transforms/preDex/release/2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/qwdf4209/Desktop/GitHub/FindNATType/app/libs/slf4j-jdk14-1.5.6.jar"
+        jumboMode="false"
+        min-sdk-version="17"
+        optimize="true"
+        revision="26.0.2"
+        sha1="e8034007754c5e8a44693846b0f72c1831a225ce">
+        <dex dex="/Users/qwdf4209/Desktop/GitHub/FindNATType/app/build/intermediates/transforms/preDex/release/3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/qwdf4209/Desktop/GitHub/FindNATType/app/libs/jstun-0.7.3.jar"
+        jumboMode="false"
+        min-sdk-version="17"
+        optimize="true"
+        revision="26.0.2"
+        sha1="6cf66846e80bb1ed54e2ccadee7277f990c04a78">
+        <dex dex="/Users/qwdf4209/Desktop/GitHub/FindNATType/app/build/intermediates/transforms/preDex/release/1.jar" />
+    </item>
+
+</items>

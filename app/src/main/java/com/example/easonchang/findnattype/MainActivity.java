@@ -91,11 +91,11 @@ public class MainActivity extends AppCompatActivity {
                     NATType = settings.getString("NatType","");
                     publicIP = settings.getString("PublicIP","");
                     localIP = settings.getString("LocalIP","");
-                    addRecord("("+String.valueOf(analysisCounts)+") Time: "+getTime(),4);
-                    addRecord("Network Type: "+mNetworkUtils.ConnectionType(),5);
-                    addRecord("NAT Type: "+NATType,1);
-                    addRecord("Public IP: "+publicIP,2);
-                    addRecord("Local IP: "+localIP+"\n",3);
+                    addRecord("("+String.valueOf(analysisCounts)+") "+getTime(),1);
+                    addRecord("Network Type: "+mNetworkUtils.ConnectionType(),1);
+                    addRecord("Local IP: "+localIP,1);
+                    addRecord("Public IP: "+publicIP,1);
+                    addRecord("NAT Type: "+NATType+"\n",1);
                     testLoading.setVisibility(View.INVISIBLE);
                     checkNATTypeHandler.removeCallbacks(checkNATTypeRunnable);
                     testBtn.setText(R.string.btn_start);
@@ -128,8 +128,8 @@ public class MainActivity extends AppCompatActivity {
         lp2.weight = 1.0f;
 
         if(type == 1) {
-            lp2.gravity = Gravity.LEFT;
-            textView.setTextColor(getResources().getColor(R.color.red_forbidden));
+            lp2.gravity = Gravity.CENTER;
+            textView.setTextColor(getResources().getColor(R.color.white));
         }
         else if (type == 2){
             lp2.gravity = Gravity.LEFT;
@@ -151,7 +151,7 @@ public class MainActivity extends AppCompatActivity {
             lp2.gravity = Gravity.LEFT;
             textView.setTextColor(getResources().getColor(R.color.bell_off));
         }
-        textView.setBackgroundColor(getResources().getColor(R.color.black));
+//        textView.setBackgroundColor(getResources().getColor(R.color.black));
 
         textView.setLayoutParams(lp2);
         mInfoLayout.addView(textView);
